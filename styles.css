@@ -1,0 +1,149 @@
+:root {
+  --primario: #00695c;
+  --secundario: #e0f2f1;
+  --oscuro: #16302d;
+  --claro: #fff;
+  --gris: #5f6b69;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--oscuro);
+  background: #f4f7f6;
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  min-height: 220px;
+  padding: 40px 8%;
+  color: var(--claro);
+  background: linear-gradient(135deg, #004d40, #00a896);
+}
+
+.encabezado h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.contenedor {
+  width: min(1100px, 90%);
+  margin: 30px auto;
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.panel h2 {
+  margin-bottom: 5px;
+}
+
+#contador {
+  color: var(--gris);
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button {
+  padding: 10px 16px;
+  border: 1px solid var(--primario);
+  border-radius: 20px;
+  color: var(--primario);
+  background: var(--claro);
+  cursor: pointer;
+}
+
+button:hover,
+button.activo {
+  color: var(--claro);
+  background: var(--primario);
+}
+
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.tarjeta {
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--claro);
+  box-shadow: 0 4px 12px #00000018;
+  transition: transform 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.imagen {
+  display: grid;
+  min-height: 130px;
+  place-items: center;
+  font-size: 3.5rem;
+  background: var(--secundario);
+}
+
+.informacion {
+  padding: 18px;
+}
+
+.etiqueta {
+  color: var(--primario);
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.precio {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+footer {
+  padding: 20px;
+  color: var(--claro);
+  text-align: center;
+  background: var(--oscuro);
+}
+
+@media (max-width: 850px) {
+  .catalogo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 550px) {
+  .catalogo {
+    grid-template-columns: 1fr;
+  }
+
+  .encabezado {
+    min-height: 180px;
+    padding: 30px 5%;
+  }
+
+  .filtros button {
+    flex: 1;
+  }
+}
